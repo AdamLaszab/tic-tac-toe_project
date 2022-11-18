@@ -40,6 +40,14 @@ def sachovnica(n):
             for i in range(rameno):
                 print('D',end=' ')
             print(hraciaplocha[-dalsie])
+        elif(i==rameno+2):
+            for u in range(1,n-rameno-1):
+                print(hraciaplocha[2+u+dalsie],end=' ')
+            print('D',end=' ')
+            for p in range(1,n-rameno-1):
+                print(hraciaplocha[-i-p+1],end=' ')
+                
+            print('')
         else:
             print(' '*rameno*2,hraciaplocha[2+i],'D',hraciaplocha[-i],' '*rameno*2,end="\n")
             dalsie+=1
