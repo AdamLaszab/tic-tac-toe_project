@@ -53,12 +53,31 @@ def sachovnica(n,hraciaplocha):
 
 
 def hra(n):
+    figurkyA=int((n-3)/2)
+    figurkyB=int((n-3)/2)
     poziciaA=0
     poziciaB=spodnepolia(n)
     hraciaplocha=['*']*velkostplochy(n)
     hraciaplocha[poziciaA]="A"
     hraciaplocha[poziciaB]="B"
-    sachovnica(n,hraciaplocha)
+    while(True):
+        sachovnica(n,hraciaplocha)
+        kockaA=random.randint(1,6)
+        hraciaplocha[poziciaA]="*"
+        poziciaA+=kockaA
+        if(poziciaA>velkostplochy(n)-1):
+            poziciaA=poziciaA-kockaA
+        elif(poziciaA==velkostplochy(n)-1):
+            figurkyA-=1
+            poziciaA=0
+        hraciaplocha[poziciaA]="A"
+        print("")
+        print("Hod kocky A=",kockaA)
+        print("")
+        if(figurkyA==0):
+            print("Vyhral A")
+            break
+
 
 
 
