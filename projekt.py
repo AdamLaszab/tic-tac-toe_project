@@ -85,7 +85,7 @@ def hra(n):
         elif(poziciaB>velkostplochy(n)-1):
             poziciaB=poziciaB-velkostplochy(n)
         if(poziciaB==poziciaA):
-            if(kockaA>kockaB)
+            if(kockaA>kockaB):
                 poziciaB=spodnepolia(n)
                 priebezneB=0
             else:
@@ -108,6 +108,6 @@ def hra(n):
 
 
 
-hra(19)
+hra(9)
 
 
