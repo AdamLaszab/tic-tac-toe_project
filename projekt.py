@@ -6,7 +6,7 @@ def spodnepolia(n):
 
     
 def sachovnica(n,hraciaplocha):
-    if(n%2!=0 and n>4):    
+    if(n%2!=0 and n>6):    
         rameno=int((n-3)/2)
         dalsie=0
         dalsie1=0
@@ -77,13 +77,19 @@ def hra(n):
             poziciaA=0
         if(priebezneB>velkostplochy(n)-1):
             poziciaB=poziciaB-kockaB
-            priebezneB=poziciaB-kockaB
+            priebezneB=priebezneB-kockaB
         elif(priebezneB==velkostplochy(n)-1):
             figurkyB-=1
             poziciaB=spodnepolia(n)
             priebezneB=0
         elif(poziciaB>velkostplochy(n)-1):
-            poziciaB=poziciaB-velkostplochy(n)    
+            poziciaB=poziciaB-velkostplochy(n)
+        if(poziciaB==poziciaA):
+            if(kockaA>kockaB)
+                poziciaB=spodnepolia(n)
+                priebezneB=0
+            else:
+                poziciaA=0
         hraciaplocha[poziciaA]="A"
         hraciaplocha[poziciaB]="B"
         print("")
@@ -102,6 +108,6 @@ def hra(n):
 
 
 
-hra(13)
+hra(19)
 
 
