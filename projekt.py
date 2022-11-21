@@ -57,25 +57,44 @@ def hra(n):
     figurkyB=int((n-3)/2)
     poziciaA=0
     poziciaB=spodnepolia(n)
+    priebezneB=0
     hraciaplocha=['*']*velkostplochy(n)
     hraciaplocha[poziciaA]="A"
     hraciaplocha[poziciaB]="B"
     while(True):
         sachovnica(n,hraciaplocha)
         kockaA=random.randint(1,6)
+        kockaB=random.randint(1,6)
         hraciaplocha[poziciaA]="*"
+        hraciaplocha[poziciaB]="*"
         poziciaA+=kockaA
+        poziciaB+=kockaB
+        priebezneB+=kockaB
         if(poziciaA>velkostplochy(n)-1):
             poziciaA=poziciaA-kockaA
         elif(poziciaA==velkostplochy(n)-1):
             figurkyA-=1
             poziciaA=0
+        if(priebezneB>velkostplochy(n)-1):
+            poziciaB=poziciaB-kockaB
+            priebezneB=poziciaB-kockaB
+        elif(priebezneB==velkostplochy(n)-1):
+            figurkyB-=1
+            poziciaB=spodnepolia(n)
+            priebezneB=0
+        elif(poziciaB>velkostplochy(n)-1):
+            poziciaB=poziciaB-velkostplochy(n)    
         hraciaplocha[poziciaA]="A"
+        hraciaplocha[poziciaB]="B"
         print("")
-        print("Hod kocky A=",kockaA)
+        print("Hod kocky A=",kockaA,"Hracovi A zostavaju",figurkyA,"figurky")
+        print("Hod kocky B=",kockaB,"Hracovi B zostavaju",figurkyB,"figurky")
         print("")
         if(figurkyA==0):
             print("Vyhral A")
+            break
+        if(figurkyB==0):
+            print("Vyhral B")
             break
 
 
@@ -83,6 +102,6 @@ def hra(n):
 
 
 
-hra(9)
+hra(13)
 
 
