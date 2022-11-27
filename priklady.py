@@ -1,3 +1,4 @@
+import random
 ##def funkcia():
 ##    maxi=0
 ##    akecislo=0
@@ -36,17 +37,33 @@ b=[[1,0,2],[3,3,-1],[-2,1,3]]
 # zrataj(a,b)
 # print(c)
 
-def vynasob(a,b):
-    if(len(a[0])==len(b)):
-        c=[[0]*len(b[0]) for _ in range(len(a))]
-        for i in range(len(c)):
-            for j in range(len(c[0])):
-                spolu=0
-                for k in range(len(a[0])):
-                    spolu+=a[i][k]*b[k][j]
-                c[i][j]=spolu
-        return c
-    else:
-        print("zle")
+# def vynasob(a,b):
+#     if(len(a[0])==len(b)):
+#         c=[[0]*len(b[0]) for _ in range(len(a))]
+#         for i in range(len(c)):
+#             for j in range(len(c[0])):
+#                 spolu=0
+#                 for k in range(len(a[0])):
+#                     spolu+=a[i][k]*b[k][j]
+#                 c[i][j]=spolu
+#         return c
+#     else:
+#         print("zle")
 
-print(vynasob(a,b))
+# print(vynasob(a,b))
+
+def test(kokot):
+    anomalie=0
+    for j in range(kokot):
+        c=[[random.randint(1,365)]*1 for _ in range(23)]
+        anomalie=0
+        for item in c:
+            if(c.count(item)>1):
+                anomalie+=1
+    return anomalie/kokot*100
+    
+
+
+
+print(test(1000))            
+    
