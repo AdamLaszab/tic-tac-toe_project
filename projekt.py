@@ -6,7 +6,7 @@ def spodnepolia(n):
 
     
 def sachovnica(n,hraciaplocha):
-    if(n%2!=0 and n>6):    
+    if(n%2!=0 and n>=5):    
         rameno=int((n-3)/2)
         dalsie=0
         dalsie1=0
@@ -62,6 +62,8 @@ def hra(n):
     hraciaplocha[poziciaA]="A"
     hraciaplocha[poziciaB]="B"
     while(True):
+        if(n<5):
+            break
         sachovnica(n,hraciaplocha)
         kockaA=random.randint(1,6)
         kockaB=random.randint(1,6)
@@ -108,6 +110,6 @@ def hra(n):
 
 
 
-hra(9)
+hra(5)
 
 

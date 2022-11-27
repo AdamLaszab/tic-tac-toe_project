@@ -51,19 +51,5 @@ b=[[1,0,2],[3,3,-1],[-2,1,3]]
 #         print("zle")
 
 # print(vynasob(a,b))
-
-def test(kokot):
-    anomalie=0
-    for j in range(kokot):
-        c=[[random.randint(1,365)]*1 for _ in range(23)]
-        anomalie=0
-        for item in c:
-            if(c.count(item)>1):
-                anomalie+=1
-    return anomalie/kokot*100
-    
-
-
-
-print(test(1000))            
+       
     
