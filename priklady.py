@@ -26,7 +26,7 @@ import random
 ##
 ##chop(t)
 ##print(t)
-a=[1,2,10,2,2,5]
+# a=[1,2,10,2,2,5]
 # b=[[1,0,2],[3,3,-1],[-2,1,3]]
 # c=[[0]*len(a[0]) for _ in range(len(a))]
 # def zrataj(a,b):
@@ -50,14 +50,72 @@ a=[1,2,10,2,2,5]
 #     else:
 #         print("zle")
 
-# print(vynasob(a,b))
-       
+# print(vynasob(a,b))       
+# def funkcia(t):
+#     spolu=0
+#     for item in t:
+#         if(t.count(item)==1):
+#             spolu+=1
+#     return spolu
 
-def funkcia(t):
-    spolu=0
-    for item in t:
-        if(t.count(item)==1):
-            spolu+=1
-    return spolu
+# print(funkcia(a))
 
-print(funkcia(a))
+# def funkcia(n):
+#     vysledok=0
+#     if(n==1):
+#         return 1
+#     else:
+#         vysledok=n+funkcia(n-1)
+#     return vysledok
+
+# print(funkcia(5))
+
+# def funkcia(n):
+#     vysledok=0
+#     if(n==0):
+#         return 0
+#     else:
+#         print("Zadaj cislo")
+#         x=int(input())+funkcia(n-1)
+#         vysledok+=x
+#     return vysledok
+
+# print(funkcia(5))
+
+# def funkcia(n):
+#     if(n==0):
+#         return 0
+#     else:
+#         print("Zadaj cislo")
+#         x=int(input())
+#         recurse=funkcia(n-1)
+#         if(x%2==0):
+#             return recurse+1
+#         else:
+#             return recurse
+        
+
+# print(funkcia(5))
+
+def funkcia(n):
+    if(n==0):
+        return True
+    else:
+        print("Zadaj cislo")
+        x=int(input())
+        priebezne=True
+        recurse=funkcia(n-1)
+        if(x%2==0):
+            priebezne=True
+        else:
+            priebezne=False    
+        if(priebezne==recurse):
+            return True
+        else:
+            return False
+
+        
+
+print(funkcia(5))
+        
+
