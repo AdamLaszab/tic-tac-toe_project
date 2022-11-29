@@ -97,25 +97,44 @@ import random
 
 # print(funkcia(5))
 
-def funkcia(n):
-    if(n==0):
-        return True
-    else:
-        print("Zadaj cislo")
-        x=int(input())
-        priebezne=True
-        recurse=funkcia(n-1)
-        if(x%2==0):
-            priebezne=True
-        else:
-            priebezne=False    
-        if(priebezne==recurse):
-            return True
-        else:
-            return False
+# def funkcia(n):
+#     if(n==0):
+#         return True
+#     else:
+#         print("Zadaj cislo")
+#         x=int(input())
+#         priebezne=True
+#         recurse=funkcia(n-1)
+#         if(x%2==0):
+#             priebezne=True
+#         else:
+#             priebezne=False    
+#         if(priebezne==recurse):
+#             return True
+#         else:
+#             return False
+
+def test_prvociselnosti(a):
+  if a < 2:
+    raise ValueError("Prvocislo nemoze byt menise ako 2")
+  for i in range(2, a):
+    if a % i == 0:
+      return False
+  return True
+
+def sucet_prvocisel(n):
+  if n < 2:
+    raise ValueError("Vstup musi byt vacsi ako 1")
+
+  if n == 2:
+    return 2
+  
+  if test_prvociselnosti(n):
+    return n + sucet_prvocisel(n - 1)
+  return sucet_prvocisel(n - 1)
 
         
 
-print(funkcia(5))
+print(sucet_prvocisel(13))
         
 
