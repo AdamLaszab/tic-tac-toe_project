@@ -1,68 +1,102 @@
-import random
-##def funkcia():
-##    maxi=0
-##    akecislo=0
-##    x =[]
-##    while(True):
-##        print("Zadaj cislo")
-##        vstup=int(input())
-##        if(vstup==0):
-##            for item in x:
-##                if(maxi<x.count(item)):
-##                    maxi=x.count(item)
-##                    akecislo=item
-##            print(akecislo,maxi)
-##            break
-##        x.append(vstup)
-##
-##funkcia()
+# import random
+# def funkcia(ret):
+#     ret=set(list(ret))
+#     return ret
 
-##t = [1, 2, 3, 4]
+# print(funkcia("adam"))
 
-##def chop(t):
-##    t.pop(0)
-##    t.pop(-1)
-##
-##
-##chop(t)
-##print(t)
-# a=[1,2,10,2,2,5]
-# b=[[1,0,2],[3,3,-1],[-2,1,3]]
-# c=[[0]*len(a[0]) for _ in range(len(a))]
-# def zrataj(a,b):
-#     for i in range(len(a)):
-#         for j in range(len(a[0])):
-#             c[i][j]=a[i][j]+b[i][j]
+# def funkcia(ret):
+#     vysledok=[]
+#     for letter in ret:
+#         if(ret.count(letter)==1):
+#             vysledok+=letter
+#     return vysledok
 
-# zrataj(a,b)
-# print(c)
+# print(funkcia("adam"))
 
-# def vynasob(a,b):
-#     if(len(a[0])==len(b)):
-#         c=[[0]*len(b[0]) for _ in range(len(a))]
-#         for i in range(len(c)):
-#             for j in range(len(c[0])):
-#                 spolu=0
-#                 for k in range(len(a[0])):
-#                     spolu+=a[i][k]*b[k][j]
-#                 c[i][j]=spolu
-#         return c
-#     else:
-#         print("zle")
-
-# print(vynasob(a,b))
-       
-
-
-def is_abecederian(word):
-
-    if(sorted(word)==list(word)):
-        return True
-    else:
-        return False
-
-
-print(is_abecederian("abgd"))
+# def funkcia(t):
+#     vysledok=0
+#     for element in t:
+#         if(len(set(element))==len(element)):
+#             vysledok+=1
+#     return vysledok
+# t=["adam","ema","chris","roland"]
+# print(funkcia(t))
 
 
 
+# def funkcia(n):
+#     t=[]
+#     while(True):
+#         print("Zadaj cislo")
+#         x=input()
+#         t+=x
+#         if(int(max(t))-int(min(t))>n):
+#             return t
+
+
+# print(funkcia(6))
+
+
+# def funkcia(n):
+#     t=[]
+#     z=0
+#     while(z<n):
+#         print("Zadaj cislo")
+#         x=input()
+#         t+=x
+#         z=len(set(t))
+#     return t
+
+# print(funkcia(5))
+
+# def funkcia(A):
+#     maxi=A[0][0]
+#     for riadok in range(len(A)):
+#         for stlpec in range(len(A[0])):
+#             if(int(A[riadok][stlpec])>maxi):
+#                maxi=A[riadok][stlpec]
+#     return maxi
+
+# print(funkcia(A))
+
+# def funkcia(A):
+#     maxi=A[0][0]
+#     posR=0
+#     posS=0
+#     vysledok=[]
+#     for riadok in range(len(A)):
+#         for stlpec in range(len(A[0])):
+#             if(int(A[riadok][stlpec])>maxi):
+#                maxi=A[riadok][stlpec]
+#                posR=riadok
+#                posS=stlpec
+#     vysledok.append(posR)
+#     vysledok.append(posS)
+#     return vysledok
+
+# print(funkcia(A))
+A=[[1,2,0,0],[3,4,0,0],[11,3,0,0]]
+def funkcia(A):
+    vysledok=0
+    t=[]
+    p=0
+    for stlpec in range(len(A[0])):
+        for riadok in range(len(A)):
+            t.append(A[riadok][stlpec])
+        for element in t:
+            if(int(element)==0):
+                p+=1
+        if(len(t)==p):
+            vysledok+=1
+        p=0
+        t=[]
+    return vysledok
+
+print(funkcia(A))
+                
+                
+            
+                
+
+        
